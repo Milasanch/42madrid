@@ -23,20 +23,20 @@
 //va_end will free the allocated memory
 #include "ft_printf.h"
 
-static int	aux_function(va_list args, char *s)
+static int	aux_function(va_list args, char const *s)
 {
 	if (*s == 'c' || *s == '%')
-		return (ft_putchar(va_args(args, char)));
+		return (ft_putchar(va_arg(args, int)));
 	else if (*s == 's')
-		return (ft_putstr(va_args(args, char *)));
+		return (ft_putstr(va_arg(args, char *)));
 	else if (*s == 'p')
-		return (ft_putptr(va_args(args, void *)));
+		return (ft_putptr(va_arg(args, void *)));
 	else if (*s == 'd' || *s == 'i')
-		return (ft_putnbr(va_args(args, int)));
+		return (ft_putnbr(va_arg(args, int)));
 	else if (*s == 'u')
-		return (ft_putunsigned(va_args(args, unsigned int)));
+		return (ft_putunsigned(va_arg(args, unsigned int)));
 	else if (*s == 'x' || *s == 'X')
-		return (ft_puthex(va_args(args, unsigned int)), *s);
+		return (ft_puthex(va_arg(args, unsigned int), *s));
 	else if (*s == '\0')
 		return (0);
 	return (0);
