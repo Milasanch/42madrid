@@ -1,4 +1,4 @@
-NAME = printf.a
+NAME = libftprintf.a
 
 CC = cc
 
