@@ -15,20 +15,37 @@
 
 int main(void)
 {
-	void *ptr = "pointer";
+	//void *ptr = "pointer";
 	
-	printf(" %i\n", ft_putchar('%'));
+	//proving individual functions
+	// printf(" %i\n", ft_putchar('%'));
+	// printf("%c\n", '%');
+	// printf(" %i\n", ft_putstr("hola"));
+	// printf("%s\n", "hola");
+	// printf(" %i\n", ft_putnbr(9385745));
+	// printf("%i\n", 9385745);
+	// printf("%d\n", 9385745);
+	// printf(" %i\n", ft_putunsigned(9834756));
+	// printf("%u\n", 9834756);
+	// printf("%x\n", -8888);
+	// printf(" %i\n", ft_puthex(-8888, 'x'));//Icheck protections
+	// printf("Address: %p\n", (void *)ptr);
+	// printf(" <- Address %i\n", ft_putptr(ptr));
+
+	//proving ft_printf;
+	ft_printf("%c\n", '%');
 	printf("%c\n", '%');
-	printf(" %i\n", ft_putstr("hola"));
-	printf("%s\n", "hola");
-	printf(" %i\n", ft_putnbr(9385745));
-	printf("%i\n", 9385745);
-	printf("%d\n", 9385745);
-	printf(" %i\n", ft_putunsigned(9834756));
-	printf("%u\n", 9834756);
-	printf("%x\n", -8888);
-	printf(" %i\n", ft_puthex(-8888, 'x'));//Icheck protections
-	printf("Address: %p\n", (void *)ptr);
-	printf(" <- Address %i\n", ft_putptr(ptr));
+	// printf(" %i\n", ft_putstr("hola"));
+	// printf("%s\n", "hola");
+	// printf(" %i\n", ft_putnbr(9385745));
+	// printf("%i\n", 9385745);
+	// printf("%d\n", 9385745);
+	// printf(" %i\n", ft_putunsigned(9834756));
+	// printf("%u\n", 9834756);
+	// printf("%x\n", -8888);
+	// printf(" %i\n", ft_puthex(-8888, 'x'));//Icheck protections
+	// printf("Address: %p\n", (void *)ptr);
+	// printf(" <- Address %i\n", ft_putptr(ptr));
+
 	return (0);
 }
