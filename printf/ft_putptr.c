@@ -41,7 +41,10 @@ int	ft_putptr(void *ptr)
 	int					i;
 
 	if (!ptr)
-		return (0);
+	{
+		write(1, "(nil)", 5);
+		return (5);
+	}
 	address = (unsigned long long)ptr;
 	write(1, "0x", 2);
 	i = 2;

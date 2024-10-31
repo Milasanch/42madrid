@@ -16,13 +16,11 @@ int	ft_putunsigned(unsigned int n)
 {
 	int	i;
 
-	if (!n)
-		return (0);
 	i = 0;
 	if (n == 0)
 	{
-		ft_putchar('0');
-		i++;
+		write(1, "0", 1);
+		return (1);
 	}
 	else
 	{

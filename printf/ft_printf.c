@@ -10,22 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//allowed functions: malloc, free, write, va_start, va_arg, va_copy, va_end
-
 //The function returns the total number of characters written to the output 
-//(excluding the null terminator). If an output error occurs, 
-//it returns a negative value
-
+//(excluding the null terminator).
 //va_start initialize everything
 //va_arg access to the arguments of the variadic function.
 //Each time va_arg is called, you move to the next argument.
-//va_arg(va_list args, type) //will take arg and type of arg.
+//va_arg(va_list args, type) will take arg and type of arg.
 //va_end will free the allocated memory
+
 #include "ft_printf.h"
 
 static int	aux_function(va_list args, char const *s)
 {
-	if (*s == 'c' || *s == '%')
+	if (*s == 'c')
 		return (ft_putchar(va_arg(args, int)));
 	else if (*s == 's')
 		return (ft_putstr(va_arg(args, char *)));
@@ -37,6 +34,11 @@ static int	aux_function(va_list args, char const *s)
 		return (ft_putunsigned(va_arg(args, unsigned int)));
 	else if (*s == 'x' || *s == 'X')
 		return (ft_puthex(va_arg(args, unsigned int), *s));
+	if (*s == '%')
+	{
+		write (1, "%", 1);
+		return (1);
+	}
 	else if (*s == '\0')
 		return (0);
 	return (0);
