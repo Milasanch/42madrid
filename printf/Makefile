@@ -13,8 +13,6 @@ AR = ar -rcs
 
 RM = rm -f
 
-INCLUDE = -I .
-
 all: $(NAME)
 
 $(NAME): $(OBJ)

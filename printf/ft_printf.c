@@ -24,23 +24,18 @@ static int	aux_function(va_list args, char const *s)
 {
 	if (*s == 'c')
 		return (ft_putchar(va_arg(args, int)));
-	else if (*s == 's')
+	if (*s == 's')
 		return (ft_putstr(va_arg(args, char *)));
-	else if (*s == 'p')
+	if (*s == 'p')
 		return (ft_putptr(va_arg(args, void *)));
-	else if (*s == 'd' || *s == 'i')
+	if (*s == 'd' || *s == 'i')
 		return (ft_putnbr(va_arg(args, int)));
-	else if (*s == 'u')
+	if (*s == 'u')
 		return (ft_putunsigned(va_arg(args, unsigned int)));
-	else if (*s == 'x' || *s == 'X')
+	if (*s == 'x' || *s == 'X')
 		return (ft_puthex(va_arg(args, unsigned int), *s));
 	if (*s == '%')
-	{
-		write (1, "%", 1);
-		return (1);
-	}
-	else if (*s == '\0')
-		return (0);
+		return (putchar("%"));
 	return (0);
 }
 
@@ -54,10 +49,12 @@ int	ft_printf(char const *s, ...)
 	i = 0;
 	va_start(args, s);
 	while (*s)
-	{
+	{	
 		if (*s == '%')
 		{
 			s++;
+			if (*s == '\0')
+				return (0);
 			i += aux_function(args, s);
 		}
 		else
