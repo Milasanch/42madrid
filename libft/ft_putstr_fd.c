@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: milsanch <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: milsanch <milsanch@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 18:04:07 by milsanch          #+#    #+#             */
-/*   Updated: 2024/10/01 18:23:24 by milsanch         ###   ########.fr       */
+/*   Updated: 2025/03/29 12:59:07 by milsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,21 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
+	if (s == NULL || fd < 0)
+		return ;
+	while (*s != '\0')
 	{
-		write(fd, &s[i], 1);
-		i++;
+		write(fd, s, 1);
+		s++;
 	}
 }
 
-/*int	main(void)
-{
-	char	*s = "Smile";
-	int		fd;
+// int	main(int argc, char **argv)
+// {
+// 	char	*s = argv[1];
+// 	int		fd;
 
-	fd = 1;
-	ft_putstr_fd(s, fd);
-	return (0);
-}*/
+// 	fd = ft_atoi(argv[2]);
+// 	ft_putstr_fd(s, fd);
+// 	return (0);
+// }
