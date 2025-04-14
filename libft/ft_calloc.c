@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: milsanch <milsanch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: milsanch <milsanch@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 17:15:45 by milsanch          #+#    #+#             */
-/*   Updated: 2024/09/26 13:13:48 by milsanch         ###   ########.fr       */
+/*   Updated: 2025/04/14 13:54:21 by milsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (0);
 	total = (nmemb * size);
 	ptr = (char *)malloc(total);
-	if (ptr == 0)
-		return (0);
+	if (!ptr)
+		return (NULL);
 	else
 	{
 		ft_bzero(ptr, total);
